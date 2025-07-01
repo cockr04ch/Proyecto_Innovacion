@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/org.gnome.BlockHost.desktop.in
+data/org.gnome.BlockHost.metainfo.xml.in
+data/org.gnome.BlockHost.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

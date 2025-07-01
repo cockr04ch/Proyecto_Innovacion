@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=proyecto_innovacion
+Exec=proyecto_innovacion
+Icon=org.gnome.BlockHost
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true

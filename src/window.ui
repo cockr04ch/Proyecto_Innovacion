@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <template class="ProyectoInnovacionWindow" parent="AdwApplicationWindow">
+    <property name="title" translatable="yes">Block Host</property>
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <child>
+      <object class="AdwBreakpoint">
+        <condition>max-width: 400sp</condition>
+        <setter object="split_view" property="collapsed">true</setter>
+      </object>
+    </child>
+    <property name="content">
+      <!-- Contenedor principal para toasts -->
+      <object class="AdwToastOverlay">
+        <child>
+          <!-- Contenido original de la aplicación -->
+          <object class="AdwToolbarView">
+            <property name="top-bar-style">1</property>
+            <child type="top">
+              <object class="AdwHeaderBar">
+                <child type="start">
+                  <object class="GtkToggleButton" id="show_sidebar_button">
+                    <property name="child">
+                      <object class="GtkImage">
+                        <property name="file">/home/daniel/dock-left-symbolic.svg</property>
+                      </object>
+                    </property>
+                    <property name="tooltip-text" translatable="yes">Oculta Sidebar</property>
+                    <property name="active" bind-source="split_view" bind-property="show-sidebar" bind-flags="sync-create"/>
+                  </object>
+                </child>
+                <child type="end">
+                  <object class="GtkMenuButton">
+                    <property name="primary">true</property>
+                    <property name="icon-name">open-menu-symbolic</property>
+                    <property name="tooltip-text" translatable="yes">Main Menu</property>
+                    <property name="menu-model">primary_menu</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <property name="content">
+              <object class="AdwOverlaySplitView" id="split_view">
+                <property name="sidebar">
+                  <object class="AdwStatusPage">
+                    <property name="title" translatable="yes">Sidebar</property>
+                    <property name="child">
+                      <object class="GtkBox">
+                        <property name="orientation">1</property>
+                        <property name="spacing">10</property>
+                        <child>
+                          <object class="GtkToggleButton" id="home_button">
+                            <property name="active">true</property>
+                            <property name="label" translatable="yes">Home</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkToggleButton" id="host_button">
+                            <property name="label" translatable="yes">Host</property>
+                            <property name="group">home_button</property>
+                          </object>
+                        </child>
+                      </object>
+                    </property>
+                  </object>
+                </property>
+                <property name="content">
+                  <object class="GtkStack" id="main_stack">
+                    <child>
+                      <object class="AdwStatusPage" id="home_view">
+                        <child>
+                          <object class="GtkBox" id="welcome">
+                            <property name="orientation">1</property>
+                            <property name="valign">3</property>
+                            <property name="halign">3</property>
+                            <child>
+                              <object class="GtkLabel">
+                                <property name="label" translatable="yes">Welcome to Block Host Root</property>
+                                <property name="margin-bottom">100</property>
+                                <style>
+                                  <class name="title-1"/>
+                                </style>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="AdwAvatar">
+                                <property name="name">logo</property>
+                                <property name="custom-image">photo_2024-03-03_16-36-57.jpg</property>
+                                <property name="size">100</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="nombre"></object>
+                            </child>
+                            <child>
+                              <object class="GtkCheckButton">
+                                <property name="label" translatable="yes">Facebook</property>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwStatusPage" id="host_view">
+                        <property name="title" translatable="yes">Domains</property>
+                        <property name="description" translatable="yes">List all Domains</property>
+                        <child>
+                          <object class="AdwClamp">
+                            <child>
+                              <object class="GtkBox">
+                                <property name="orientation">1</property>
+                                <child>
+                                  <object class="GtkListBox">
+                                    <property name="selection-mode">0</property>
+                                    <style>
+                                      <class name="boxed-list"/>
+                                    </style>
+                                    <child>
+                                      <object class="AdwSwitchRow" id="switch_facebook">
+                                        <property name="title" translatable="yes">Facebook</property>
+                                        <property name="subtitle" translatable="yes">Block all Domains Facebook</property>
+                                      </object>
+                                    </child>
+                                    <child>
+                                      <object class="AdwSwitchRow" id="switch_steven">
+                                        <property name="title" translatable="yes">StevenBlack</property>
+                                        <property name="subtitle" translatable="yes">List Domains Steven</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkProgressBar" id="progress_bar"></object>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="button_apply">
+                                    <property name="label" translatable="yes">Apply</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+  <menu id="primary_menu">
+    <section>
+      <item>
+        <attribute name="label" translatable="yes">_Preferences</attribute>
+        <attribute name="action">app.preferences</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
+        <attribute name="action">win.show-help-overlay</attribute>
+      </item>
+      <item>
+        <attribute name="label" translatable="yes">_About Proyecto_Innovacion</attribute>
+        <attribute name="action">app.about</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>
