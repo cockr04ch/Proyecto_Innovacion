@@ -12,10 +12,8 @@
       </object>
     </child>
     <property name="content">
-      <!-- Contenedor principal para toasts -->
       <object class="AdwToastOverlay">
         <child>
-          <!-- Contenido original de la aplicación -->
           <object class="AdwToolbarView">
             <property name="top-bar-style">1</property>
             <child type="top">
@@ -127,7 +125,13 @@
                                     <child>
                                       <object class="AdwSwitchRow" id="switch_steven">
                                         <property name="title" translatable="yes">StevenBlack</property>
-                                        <property name="subtitle" translatable="yes">List Domains Steven</property>
+                                        <property name="subtitle" translatable="yes">List Domains Steven | Category: Adware</property>
+                                      </object>
+                                    </child>
+                                    <child>
+                                      <object class="AdwSwitchRow" id="switch_easylist">
+                                        <property name="title" translatable="yes">EasyList</property>
+                                        <property name="subtitle" translatable="yes">EasyList Domains(Recomend) | Category: ADS</property>
                                       </object>
                                     </child>
                                   </object>

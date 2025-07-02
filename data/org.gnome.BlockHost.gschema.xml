@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="proyecto_innovacion">
 	<schema id="org.gnome.BlockHost" path="/org/gnome/BlockHost/">
+		<key name="switch-steven-active" type="b">
+			<default>false</default>
+			<summary>The state of the steven switch</summary>
+		</key>
+		<key name="switch-facebook-active" type="b">
+			<default>false</default>
+			<summary>The state of the facebook switch</summary>
+		</key>
+		<key name="switch-easylist-active" type="b">
+			<default>false</default>
+			<summary>The state of the easylist switch</summary>
+		</key>
 	</schema>
 </schemalist>
+
+
