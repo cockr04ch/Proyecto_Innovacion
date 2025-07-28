@@ -75,7 +75,7 @@
                             <property name="halign">3</property>
                             <child>
                               <object class="GtkLabel">
-                                <property name="label" translatable="yes">Welcome to Block Host Root</property>
+                                <property name="label" translatable="yes">Welcome to BlockHost</property>
                                 <property name="margin-bottom">100</property>
                                 <style>
                                   <class name="title-1"/>
@@ -91,11 +91,6 @@
                             </child>
                             <child>
                               <object class="GtkLabel" id="nombre"></object>
-                            </child>
-                            <child>
-                              <object class="GtkCheckButton">
-                                <property name="label" translatable="yes">Facebook</property>
-                              </object>
                             </child>
                           </object>
                         </child>
